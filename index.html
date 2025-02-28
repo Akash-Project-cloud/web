@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #282c34;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+        }
+        .container {
+            text-align: center;
+        }
+        .typing-text {
+            border-right: 2px solid white;
+            padding-right: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="typing-text" id="typing"></span>
+    </div>
+    
+    <script>
+        const text = "Hello, Saveetha Engineering College";
+        let index = 0;
+        function typeEffect() {
+            if (index < text.length) {
+                document.getElementById("typing").textContent += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 100);
+            }
+        }
+        
+        window.onload = typeEffect;
+    </script>
+</body>
+</html>
