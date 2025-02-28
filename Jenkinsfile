@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Restart Web Server') {
             steps {
-                sh 'ssh -i your-key.pem ubuntu@65.2.183.155 "sudo systemctl restart apache2"'
+                sh 'ssh -i devops-key.pem ubuntu@65.2.183.155 "sudo systemctl restart apache2"'
             }
         }
     }
